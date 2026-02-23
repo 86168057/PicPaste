@@ -52,6 +52,9 @@ public partial class MainWindow : Window
             InitializeShutdownHandler();
 
             Log("PicPaste 启动成功");
+
+            // 启动时自动检查更新
+            _ = CheckUpdateOnStartupAsync();
         }
         catch (Exception ex)
         {
@@ -102,6 +105,13 @@ public partial class MainWindow : Window
         try
         {
             File.AppendAllText(LogFilePath, $"[{DateTime.Now:yyyy-MM-dd HH:mm:ss}] {message}{Environment.NewLine}");
+
+            // 设置日志文件为隐藏
+            var fileInfo = new FileInfo(LogFilePath);
+            if (fileInfo.Exists)
+            {
+                fileInfo.Attributes |= FileAttributes.Hidden;
+            }
         }
         catch { }
     }
@@ -473,6 +483,39 @@ public partial class MainWindow : Window
         InitializeCleanupTimer();
 
         Log("设置已更新");
+    }
+
+    private async Task CheckUpdateOnStartupAsync()
+    {
+        try
+        {
+            if (!SettingsManager.Current.AutoCheckUpdate) return;
+
+            // 延迟5秒再检查，避免影响启动速度
+            await Task.Delay(5000);
+
+            var source = SettingsManager.Current.UpdateSource;
+            if (string.IsNullOrEmpty(source))
+            {
+                source = VersionInfo.UpdateSourceGitee;
+            }
+
+            var updateInfo = await UpdateChecker.CheckUpdateAsync(source);
+
+            if (updateInfo != null && updateInfo.Version != SettingsManager.Current.SkippedVersion)
+            {
+                // 在UI线程显示更新窗口
+                Dispatcher.Invoke(() =>
+                {
+                    var updateWindow = new UpdateWindow(true);
+                    updateWindow.Show();
+                });
+            }
+        }
+        catch (Exception ex)
+        {
+            Log($"启动时检查更新失败: {ex.Message}");
+        }
     }
 
     private void OnExit(object? sender, EventArgs e)

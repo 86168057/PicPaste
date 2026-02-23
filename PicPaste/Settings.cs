@@ -39,6 +39,15 @@ public class AppSettings
     // 日志记录
     public bool EnableLogging { get; set; } = true;
 
+    // 更新源（GitHub 或 Gitee）
+    public string UpdateSource { get; set; } = "Gitee";
+
+    // 启动时自动检查更新
+    public bool AutoCheckUpdate { get; set; } = true;
+
+    // 跳过的版本（用户选择暂不更新的版本）
+    public string SkippedVersion { get; set; } = "";
+
     public AppSettings()
     {
         // 默认保存路径：桌面/临时截图
@@ -107,6 +116,13 @@ public static class SettingsManager
                 WriteIndented = true
             });
             File.WriteAllText(SettingsPath, json);
+
+            // 设置文件为隐藏
+            var fileInfo = new FileInfo(SettingsPath);
+            if (fileInfo.Exists)
+            {
+                fileInfo.Attributes |= FileAttributes.Hidden;
+            }
         }
         catch (Exception)
         {

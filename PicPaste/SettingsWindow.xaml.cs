@@ -138,6 +138,17 @@ public partial class SettingsWindow : Window
 
         // 其他设置
         CbShowNotifications.IsChecked = settings.ShowTrayNotifications;
+
+        // 更新设置
+        CbAutoCheckUpdate.IsChecked = settings.AutoCheckUpdate;
+        if (settings.UpdateSource == VersionInfo.UpdateSourceGitHub)
+        {
+            RbUpdateGitHub.IsChecked = true;
+        }
+        else
+        {
+            RbUpdateGitee.IsChecked = true;
+        }
     }
 
     private void LoadLogContent()
@@ -276,6 +287,10 @@ public partial class SettingsWindow : Window
         // 其他设置
         settings.ShowTrayNotifications = CbShowNotifications.IsChecked == true;
 
+        // 更新设置
+        settings.AutoCheckUpdate = CbAutoCheckUpdate.IsChecked == true;
+        settings.UpdateSource = RbUpdateGitHub.IsChecked == true ? VersionInfo.UpdateSourceGitHub : VersionInfo.UpdateSourceGitee;
+
         // 确保保存路径存在
         SettingsManager.EnsureSavePathExists();
 
@@ -322,7 +337,17 @@ public partial class SettingsWindow : Window
             CbCleanupOnExit.IsChecked = true;
             CbCleanupOnShutdown.IsChecked = true;
             CbShowNotifications.IsChecked = true;
+
+            // 更新设置默认值
+            CbAutoCheckUpdate.IsChecked = true;
+            RbUpdateGitee.IsChecked = true;
         }
+    }
+
+    private void OnCheckUpdateNow(object sender, RoutedEventArgs e)
+    {
+        var updateWindow = new UpdateWindow(false);
+        updateWindow.ShowDialog();
     }
 
     public event EventHandler? SettingsSaved;

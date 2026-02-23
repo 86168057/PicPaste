@@ -24,8 +24,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Resource Include="123.png" />
     <EmbeddedResource Include="123.png" />
-    <EmbeddedResource Include="app.ico" />
+    <Resource Include="app.ico" />
   </ItemGroup>
 
 </Project>

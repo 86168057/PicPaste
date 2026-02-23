@@ -7,7 +7,7 @@
         WindowStartupLocation="CenterScreen"
         ResizeMode="CanMinimize"
         Background="#F0F0F0"
-        Icon="/PicPaste;component/123.png">
+        Icon="123.png">
 
     <Border Background="White" Margin="15" CornerRadius="10">
         <Border.Effect>
@@ -23,7 +23,7 @@
             <!-- 左侧：标题和基本信息 -->
             <Border Background="#0078D4" CornerRadius="10,0,0,10">
                 <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Margin="20">
-                    <Image Source="/PicPaste;component/123.png" Width="80" Height="80" Margin="0,0,0,15"/>
+                    <Image Source="123.png" Width="80" Height="80" Margin="0,0,0,15"/>
                     <TextBlock Text="PicPaste" FontSize="24" FontWeight="Bold" Foreground="White" HorizontalAlignment="Center"/>
                     <TextBlock Text="智能剪贴板图片处理工具" FontSize="12" Foreground="#E0E0E0" HorizontalAlignment="Center" Margin="0,5,0,0" TextWrapping="Wrap" TextAlignment="Center"/>
                     <Separator Background="#5599DD" Margin="0,20,0,15"/>
@@ -177,6 +177,36 @@
                               Style="{StaticResource ModernCheckBox}"
                               FontSize="12"
                               Margin="0,5,0,0"/>
+
+                    <!-- 更新设置 -->
+                    <TextBlock Text="更新设置" Style="{StaticResource SectionHeader}"/>
+                    <CheckBox x:Name="CbAutoCheckUpdate"
+                              Content="启动时自动检查更新"
+                              Style="{StaticResource ModernCheckBox}"
+                              FontSize="12"
+                              Margin="0,5,0,10"/>
+
+                    <Grid Margin="0,5">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="140"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="更新源" VerticalAlignment="Center" FontSize="12"/>
+                        <StackPanel Grid.Column="1" Orientation="Horizontal">
+                            <RadioButton x:Name="RbUpdateGitHub" Content="GitHub" GroupName="UpdateSource" Margin="0,0,15,0" FontSize="12"/>
+                            <RadioButton x:Name="RbUpdateGitee" Content="Gitee（国内推荐）" GroupName="UpdateSource" FontSize="12"/>
+                        </StackPanel>
+                    </Grid>
+                    <TextBlock Text="提示：Gitee 服务器在国内，没有代理的情况下下载速度更快" 
+                               FontSize="11" Foreground="#888" Margin="0,0,0,15"/>
+
+                    <Button x:Name="BtnCheckUpdateNow" 
+                            Content="立即检查更新" 
+                            Style="{StaticResource ModernButton}"
+                            Padding="15,6"
+                            HorizontalAlignment="Left"
+                            Click="OnCheckUpdateNow"
+                            Margin="0,0,0,10"/>
 
                     <!-- 其他设置 -->
                     <TextBlock Text="其他设置" Style="{StaticResource SectionHeader}"/>
