@@ -1,53 +1,54 @@
-# PicPaste v1.0.0 发布说明
+# PicPaste v1.0.0 Release Notes
 
-## 版本信息
-- **版本号**: v1.0.0
-- **发布日期**: 2026-02-23
-- **开发者**: 潇洒公子
+## Version Info
+- **Version**: v1.0.0
+- **Release Date**: 2026-02-23
+- **Developer**: 潇洒公子
 
-## 功能特性
+## Based On
+This project is based on [clipboard-image-watcher](https://github.com/citizenll/clipboard-image-watcher) by [citizenll](https://github.com/citizenll).
 
-### 核心功能
-- **智能剪贴板监控**: 自动检测剪贴板中的截图
-- **仅在需要时保存**: 只有在终端粘贴时才生成图片文件
-- **自动替换剪贴板**: 将图片替换为文件路径，方便在命令行中使用
+## Features
 
-### 缓存管理
-- 最大文件数量限制（支持无限制）
-- 文件保留时长设置（支持永久保留）
-- 自动清理间隔（支持不自动清理）
-- 退出/关机时自动清理截图文件
+### Core Features
+- Smart clipboard monitoring for screenshots
+- Save images only when pasting in terminal (not immediately on screenshot)
+- Auto-replace clipboard with file path for easy terminal use
+- Customizable save path
 
-### 更新功能
-- 支持手动检查更新
-- 启动时自动检查更新（可关闭）
-- 双源更新：GitHub 和 Gitee
-- 自动下载并安装更新
+### Cache Management
+- Max file count limit (0 = unlimited)
+- File retention time (0 = permanent)
+- Auto cleanup interval (0 = disabled)
+- Cleanup on exit/shutdown
 
-### 其他功能
-- 开机自启动
-- 日志查看功能
-- 托盘图标支持
-- 自定义保存路径
+### Update System
+- Manual update check
+- Auto check on startup (can be disabled)
+- Dual source: GitHub and Gitee
+- Auto download and install
 
-## 更新源说明
+### Other Features
+- Auto-start on Windows boot
+- Log viewer
+- Tray icon support
+- Modern settings UI
 
-### GitHub
-- 地址: https://github.com/86168057/PicPaste
-- 适合有代理或海外网络环境
+## Download Sources
 
-### Gitee（推荐国内用户）
-- 地址: https://gitee.com/lfsnd/PicPaste
-- 服务器在国内，无需代理，下载速度更快
+### GitHub (International)
+https://github.com/86168057/PicPaste/releases
+- For users with proxy or overseas network
 
-## 系统要求
-- Windows 10/11 64位
-- 无需安装 .NET Runtime（自包含）
+### Gitee (Recommended for China)
+https://gitee.com/lfsnd/PicPaste/releases
+- Domestic server, faster download without proxy
 
-## 使用说明
-1. 运行 PicPaste.exe
-2. 截图后，在终端按 Ctrl+V 即可粘贴图片路径
-3. 右键托盘图标可打开设置面板
+## System Requirements
+- Windows 10/11 64-bit
+- No .NET Runtime required (self-contained)
 
-## 下载
-- 单文件版本，无需安装，开箱即用
+## How to Use
+1. Run PicPaste.exe
+2. Take a screenshot, then press Ctrl+V in terminal to paste the image path
+3. Right-click tray icon to open settings

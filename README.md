@@ -20,11 +20,11 @@
 
 ## 📋 项目说明
 
-本项目基于 [clipboard-image-watcher](https://github.com/doraemonkeys/clipboard-image-watcher) 进行二次开发。
+本项目基于 [clipboard-image-watcher](https://github.com/citizenll/clipboard-image-watcher) 进行二次开发。
 
-**原项目地址**: https://github.com/doraemonkeys/clipboard-image-watcher
+**原项目地址**: https://github.com/citizenll/clipboard-image-watcher
 
-感谢原作者 [doraemonkeys](https://github.com/doraemonkeys) 提供的优秀基础代码！
+感谢原作者 [citizenll](https://github.com/citizenll) 提供的优秀基础代码！
 
 ### 开发者信息
 - **二次开发者**: 潇洒公子
