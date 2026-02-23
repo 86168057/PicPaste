@@ -247,17 +247,18 @@ A: 尝试切换更新源（GitHub/Gitee），或手动下载最新版本覆盖�
 如果这个项目对你有帮助，欢迎打赏支持开发者！
 
 <p align="center">
-  <strong>微信打赏</strong>
-</p>
-<p align="center">
-  <img src="支付/weinxin.png" width="200" alt="微信收款码">
-</p>
-
-<p align="center">
-  <strong>支付宝打赏</strong>
-</p>
-<p align="center">
-  <img src="支付/zhifubao.png" width="200" alt="支付宝收款码">
+  <table>
+    <tr>
+      <td align="center">
+        <strong>微信打赏</strong><br><br>
+        <img src="支付/weinxin.png" width="200" alt="微信收款码">
+      </td>
+      <td align="center">
+        <strong>支付宝打赏</strong><br><br>
+        <img src="支付/zhifubao.png" width="200" alt="支付宝收款码">
+      </td>
+    </tr>
+  </table>
 </p>
 
 ---
