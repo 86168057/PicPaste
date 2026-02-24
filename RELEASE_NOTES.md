@@ -1,54 +1,52 @@
-# PicPaste v1.0.0 Release Notes
+# PicPaste v1.0.0 发布说明
 
-## Version Info
-- **Version**: v1.0.0
-- **Release Date**: 2026-02-23
-- **Developer**: 潇洒公子
+## 版本信息
+- **版本号**: v1.0.0
+- **发布日期**: 2026-02-23
+- **开发者**: 潇洒公子
 
-## Based On
-This project is based on [clipboard-image-watcher](https://github.com/citizenll/clipboard-image-watcher) by [citizenll](https://github.com/citizenll).
+## 原项目
+本项目基于 [clipboard-image-watcher](https://github.com/citizenll/clipboard-image-watcher) 进行二次开发
 
-## Features
+## 主要功能
 
-### Core Features
-- Smart clipboard monitoring for screenshots
-- Save images only when pasting in terminal (not immediately on screenshot)
-- Auto-replace clipboard with file path for easy terminal use
-- Customizable save path
+### 核心功能
+- 智能剪贴板监控，仅在终端粘贴时保存图片
+- 自动将图片替换为文件路径
+- 自定义保存路径
 
-### Cache Management
-- Max file count limit (0 = unlimited)
-- File retention time (0 = permanent)
-- Auto cleanup interval (0 = disabled)
-- Cleanup on exit/shutdown
+### 缓存管理
+- 最大文件数量限制（支持无限制）
+- 文件保留时长设置（支持永久保留）
+- 自动清理间隔（支持不自动清理）
+- 退出/关机时自动清理截图文件
 
-### Update System
-- Manual update check
-- Auto check on startup (can be disabled)
-- Dual source: GitHub and Gitee
-- Auto download and install
+### 更新功能
+- 支持手动和自动检查更新
+- 双源更新：GitHub 和 Gitee
+- 自动下载并安装更新
 
-### Other Features
-- Auto-start on Windows boot
-- Log viewer
-- Tray icon support
-- Modern settings UI
+### 其他功能
+- 开机自启动
+- 日志查看功能
+- 托盘图标支持
+- 现代化设置界面
 
-## Download Sources
+## 下载地址
 
-### GitHub (International)
+### GitHub（国际）
 https://github.com/86168057/PicPaste/releases
-- For users with proxy or overseas network
+- 适合有代理或海外网络环境
 
-### Gitee (Recommended for China)
+### Gitee（国内推荐）
 https://gitee.com/lfsnd/PicPaste/releases
-- Domestic server, faster download without proxy
+- 服务器在国内，无需代理，下载速度更快
 
-## System Requirements
-- Windows 10/11 64-bit
-- No .NET Runtime required (self-contained)
+## 系统要求
+- Windows 10/11 64位
+- 无需安装 .NET Runtime（自包含单文件）
 
-## How to Use
-1. Run PicPaste.exe
-2. Take a screenshot, then press Ctrl+V in terminal to paste the image path
-3. Right-click tray icon to open settings
+## 使用方法
+1. 运行 PicPaste.exe
+2. 截图后，在终端按 Ctrl+V 粘贴图片路径
+3. 右键托盘图标打开设置面板
